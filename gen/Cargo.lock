@@ -235,7 +235,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pact-agri-food-extension"
+name = "ileap-extension"
 version = "0.1.0"
 dependencies = [
  "chrono",
