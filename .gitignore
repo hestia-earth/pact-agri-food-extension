@@ -1,0 +1,6 @@
+specs/*.html
+gen/target
+out/
+*.svg
+node_modules/
+package*.json

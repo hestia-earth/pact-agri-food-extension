@@ -1,0 +1,417 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HOC",
+  "type": "object",
+  "required": [
+    "co2eIntensityTTW",
+    "co2eIntensityThroughput",
+    "co2eIntensityWTW",
+    "energyCarriers",
+    "hocId",
+    "hubType",
+    "isAccredited",
+    "isVerified"
+  ],
+  "properties": {
+    "co2eIntensityTTW": {
+      "$ref": "#/definitions/Decimal"
+    },
+    "co2eIntensityThroughput": {
+      "$ref": "#/definitions/HocCo2eIntensityThroughput"
+    },
+    "co2eIntensityWTW": {
+      "$ref": "#/definitions/Decimal"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "energyCarriers": {
+      "$ref": "#/definitions/NonEmptyVec_for_EnergyCarrier"
+    },
+    "hocId": {
+      "type": "string"
+    },
+    "hubLocation": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Location"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "hubType": {
+      "$ref": "#/definitions/HubType"
+    },
+    "inboundTransportMode": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TransportMode"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "isAccredited": {
+      "type": "boolean"
+    },
+    "isVerified": {
+      "type": "boolean"
+    },
+    "outboundTransportMode": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TransportMode"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "packagingOrTrEqAmount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "uint",
+      "minimum": 0.0
+    },
+    "packagingOrTrEqType": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/PackagingOrTrEqType"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "temperatureControl": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/TemperatureControl"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "Decimal": {
+      "type": "string",
+      "pattern": "^-?\\d+(\\.\\d+)?$"
+    },
+    "EnergyCarrier": {
+      "type": "object",
+      "required": [
+        "emissionFactorTTW",
+        "emissionFactorWTW",
+        "energyCarrier"
+      ],
+      "properties": {
+        "emissionFactorTTW": {
+          "$ref": "#/definitions/Decimal"
+        },
+        "emissionFactorWTW": {
+          "$ref": "#/definitions/Decimal"
+        },
+        "energyCarrier": {
+          "$ref": "#/definitions/EnergyCarrierType"
+        },
+        "energyConsumption": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "energyConsumptionUnit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "feedstocks": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "$ref": "#/definitions/Feedstock"
+          }
+        }
+      }
+    },
+    "EnergyCarrierType": {
+      "type": "string",
+      "enum": [
+        "Diesel",
+        "HVO",
+        "Petrol",
+        "CNG",
+        "LNG",
+        "LPG",
+        "HFO",
+        "MGO",
+        "Aviation fuel",
+        "Hydrogen",
+        "Methanol",
+        "Electric"
+      ]
+    },
+    "Feedstock": {
+      "type": "object",
+      "required": [
+        "feedstock"
+      ],
+      "properties": {
+        "feedstock": {
+          "$ref": "#/definitions/FeedstockType"
+        },
+        "feedstockPercentage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "regionProvenance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "FeedstockType": {
+      "type": "string",
+      "enum": [
+        "Fossil",
+        "Natural gas",
+        "Grid",
+        "Renewable electricity",
+        "Cooking oil"
+      ]
+    },
+    "GeographicScope": {
+      "description": "Encoded geographic scope rules of a Spec Version 2 `CarbonFootprint`",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "geographyRegionOrSubregion"
+          ],
+          "properties": {
+            "geographyRegionOrSubregion": {
+              "$ref": "#/definitions/UNRegionOrSubregion"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "geographyCountry"
+          ],
+          "properties": {
+            "geographyCountry": {
+              "$ref": "#/definitions/ISO3166CC"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "geographyCountrySubdivision"
+          ],
+          "properties": {
+            "geographyCountrySubdivision": {
+              "$ref": "#/definitions/NonEmptyString"
+            }
+          }
+        }
+      ]
+    },
+    "HocCo2eIntensityThroughput": {
+      "type": "string",
+      "enum": [
+        "TEU",
+        "tonnes"
+      ]
+    },
+    "HubType": {
+      "type": "string",
+      "enum": [
+        "transshipment",
+        "storageAndTransshipment",
+        "warehouse",
+        "liquidBulkTerminal",
+        "maritimeContainerterminal"
+      ]
+    },
+    "ISO3166CC": {
+      "type": "string"
+    },
+    "IataCode": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "object",
+      "required": [
+        "city",
+        "country"
+      ],
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/GeographicScope"
+        },
+        "iata": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/IataCode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lat": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lng": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locode": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Locode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "street": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/UicCode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Locode": {
+      "type": "string"
+    },
+    "NonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "NonEmptyVec_for_EnergyCarrier": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EnergyCarrier"
+      }
+    },
+    "PackagingOrTrEqType": {
+      "type": "string",
+      "enum": [
+        "Box",
+        "Pallet",
+        "Container"
+      ]
+    },
+    "TemperatureControl": {
+      "type": "string",
+      "enum": [
+        "ambient",
+        "refrigerated",
+        "mixed"
+      ]
+    },
+    "TransportMode": {
+      "type": "string",
+      "enum": [
+        "Road",
+        "Rail",
+        "Air",
+        "Sea",
+        "InlandWaterway"
+      ]
+    },
+    "UNRegionOrSubregion": {
+      "description": "List of UN regions and subregions",
+      "type": "string",
+      "enum": [
+        "Africa",
+        "Americas",
+        "Asia",
+        "Europe",
+        "Oceania",
+        "Australia and New Zealand",
+        "Central Asia",
+        "Eastern Asia",
+        "Eastern Europe",
+        "Latin America and the Caribbean",
+        "Melanesia",
+        "Micronesia",
+        "Northern Africa",
+        "Northern America",
+        "Northern Europe",
+        "Polynesia",
+        "South-eastern Asia",
+        "Southern Asia",
+        "Southern Europe",
+        "Sub-Saharan Africa",
+        "Western Asia",
+        "Western Europe"
+      ]
+    },
+    "UicCode": {
+      "type": "string"
+    }
+  }
+}

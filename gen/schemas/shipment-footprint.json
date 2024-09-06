@@ -1,0 +1,453 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ShipmentFootprint",
+  "type": "object",
+  "required": [
+    "mass",
+    "shipmentId",
+    "tces"
+  ],
+  "properties": {
+    "mass": {
+      "type": "string"
+    },
+    "numberOfItems": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "shipmentId": {
+      "type": "string"
+    },
+    "tces": {
+      "$ref": "#/definitions/NonEmptyVec_for_TCE"
+    },
+    "typeOfItems": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "volume": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "definitions": {
+    "Decimal": {
+      "type": "string",
+      "pattern": "^-?\\d+(\\.\\d+)?$"
+    },
+    "GeographicScope": {
+      "description": "Encoded geographic scope rules of a Spec Version 2 `CarbonFootprint`",
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "geographyRegionOrSubregion"
+          ],
+          "properties": {
+            "geographyRegionOrSubregion": {
+              "$ref": "#/definitions/UNRegionOrSubregion"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "geographyCountry"
+          ],
+          "properties": {
+            "geographyCountry": {
+              "$ref": "#/definitions/ISO3166CC"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "geographyCountrySubdivision"
+          ],
+          "properties": {
+            "geographyCountrySubdivision": {
+              "$ref": "#/definitions/NonEmptyString"
+            }
+          }
+        }
+      ]
+    },
+    "GlecDistance": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "actual"
+          ],
+          "properties": {
+            "actual": {
+              "$ref": "#/definitions/Decimal"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "gcd"
+          ],
+          "properties": {
+            "gcd": {
+              "$ref": "#/definitions/Decimal"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "sfd"
+          ],
+          "properties": {
+            "sfd": {
+              "$ref": "#/definitions/Decimal"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ISO3166CC": {
+      "type": "string"
+    },
+    "IataCode": {
+      "type": "string"
+    },
+    "Incoterms": {
+      "type": "string",
+      "enum": [
+        "EXW",
+        "FCA",
+        "CPT",
+        "CIP",
+        "DAP",
+        "DPU",
+        "DDP",
+        "FAS",
+        "FOB",
+        "CFR",
+        "CIF"
+      ]
+    },
+    "Location": {
+      "type": "object",
+      "required": [
+        "city",
+        "country"
+      ],
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/GeographicScope"
+        },
+        "iata": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/IataCode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lat": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lng": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "locode": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Locode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "street": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uic": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/UicCode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "zip": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Locode": {
+      "type": "string"
+    },
+    "NonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "NonEmptyVec_for_TCE": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TCE"
+      }
+    },
+    "PackagingOrTrEqType": {
+      "type": "string",
+      "enum": [
+        "Box",
+        "Pallet",
+        "Container"
+      ]
+    },
+    "TCE": {
+      "type": "object",
+      "required": [
+        "co2eTTW",
+        "co2eWTW",
+        "distance",
+        "mass",
+        "shipmentId",
+        "tceId",
+        "transportActivity"
+      ],
+      "properties": {
+        "arrivalAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "ch4TTW": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "co2eTTW": {
+          "$ref": "#/definitions/Decimal"
+        },
+        "co2eWTW": {
+          "$ref": "#/definitions/Decimal"
+        },
+        "consignmentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "departureAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "destination": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Location"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "distance": {
+          "$ref": "#/definitions/GlecDistance"
+        },
+        "flightNo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hocId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "incoterms": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Incoterms"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mass": {
+          "$ref": "#/definitions/Decimal"
+        },
+        "noxTTW": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origin": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Location"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "packagingOrTrEqAmount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "packagingOrTrEqType": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/PackagingOrTrEqType"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pmTTW": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prevTceIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "shipmentId": {
+          "type": "string"
+        },
+        "soxTTW": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Decimal"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "tceId": {
+          "type": "string"
+        },
+        "tocId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transportActivity": {
+          "$ref": "#/definitions/Decimal"
+        },
+        "voyageNo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "UNRegionOrSubregion": {
+      "description": "List of UN regions and subregions",
+      "type": "string",
+      "enum": [
+        "Africa",
+        "Americas",
+        "Asia",
+        "Europe",
+        "Oceania",
+        "Australia and New Zealand",
+        "Central Asia",
+        "Eastern Asia",
+        "Eastern Europe",
+        "Latin America and the Caribbean",
+        "Melanesia",
+        "Micronesia",
+        "Northern Africa",
+        "Northern America",
+        "Northern Europe",
+        "Polynesia",
+        "South-eastern Asia",
+        "Southern Asia",
+        "Southern Europe",
+        "Sub-Saharan Africa",
+        "Western Asia",
+        "Western Europe"
+      ]
+    },
+    "UicCode": {
+      "type": "string"
+    }
+  }
+}
