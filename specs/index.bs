@@ -17,13 +17,28 @@ Local Boilerplate: header yes
 
 # Introduction # {#introduction}
 
-- Companies want to move from generic and modeled environmental impact data to primary data that accurately reflects their supply chains.
-- The standard PACT data model does not include fields of sufficient granularity for the agri-food industry.
-- This document specifies a PACT data model extension.
-- It includes mandatory additional fields from the HESTIA data model in order to meet these criteria.
-- In addition it includes further optional reference fields to include agricultural activity data (data on inputs, products, practices, and site measurements) from HESTIA, which would provide the level of detail required to assess potential interventions and decarbonisation opportunities, as well as to recalculate impacts.
-- Adoption of this specification enables the exchange of data between different actors in the agriculture value chain at a sufficient level of granularity to accurately reflect supply chain emissions and support facilitate interventions.
+- Organisations have a growing need to calculate and report agriculture emissions data with greater accuracy and transparency. They want to move from standard and modelled data to primary, product-level data that accurately reflects their supply chain’s impacts.
+- PACT offers a data model and data exchange mechanism, alongside a product carbon footprint (PCF) calculation guidelines to enable this.
+- PACT is rapidly gaining momentum and becoming the de facto standard for <i>calculating</i> and <i>sharing</i> PCFs between organisations along a supply chain.
+- However, the core PACT data model does not yet include fields of sufficient granularity for the agri-food sector, as it’s designed to be industry agnostic.
 
+# Solution proposal # {#solution-proposal}
+
+- Other industry groups have already collaborated with PACT to define <i>industry specific data model extensions</i> to the PACT core model. (E.g., for logistics, steel, and aluminium). Examples are available at: https://www.carbon-transparency.org/for-providers.
+- Here, we provide an extension of the PACT data model for agri-food products. Primary users of this extension include agricultural commodity producers including from animal sources (e.g., meat, dairy, and aquaculture); food processors; food retailers; and companies that use inputs derived from agri-food sectors. This is a subset of the products covered by the GHG Protocol Land Sector and Removals Guidelines, excludes forest products and other non-food land-derived products.
+- The data model extension is in two parts. Firstly, the inclusion of <i>mandatory</i> additional fields to the core PACT model which are required under the Land Sector and Removal Guidelines.
+- Secondly, we include further <i>optional</i> reference fields from the comprehensive HESTIA data model. HESTIA provides the leading standard for structuring farm-level environmental data with maximum granularity across all activity and input areas. We recognise that not all organisations will be able to provide these data as standard from day one, hence why this detail is optional but encouraged. Exchanging data at this level, has key use cases including: detailed emissions breakdowns; detail on models or methods used to estimate each emission; multiple environmental impact indicators (beyond GHG emissions); the ability to recalculate environmental impacts to consistent methods from activity data; amongst other uses.
+- Our goal is to create alignment between the existing HESTIA data model and the PACT data model, and to facilitate adoption of standard data structures across the food and agriculture industry, so that data in the agriculture value chain can be universally exchanged via the PACT data exchange protocol.
+
+# Summary of scope # {#summary-of-scope}
+- We include an extension of the existing PACT data model to include further mandatory fields for organisations exchanging “agri-food” data.
+- In addition to this, we include further optional fields from the HESTIA model for maximum completeness.
+- This gives three levels of data model granularity for the food and agricultural value chain, all three of which may be exchanged using the PACT exchange protocol. While “PACT for Agri-Food” is strongly encouraged for organisations exchanging agri-food data, the “HESTIA” fields are optional.
+
+<figure id="figure-data-transactions">
+  <img src="diagrams/data-model-diagram.jpg">
+  <figcaption>Agri-Food Data Model Diagram</figcaption>
+</figure>
 
 # PACT data model # {#data-model}
 
