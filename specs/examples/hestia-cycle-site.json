@@ -1,0 +1,434 @@
+{
+  "extensions": [
+    {
+      "specVersion": "30.2.1",
+      "dataSchema": "https://www.hestia.earth/schema-data/json-schema/Cycle.json",
+      "data": {
+        "@id": "vtfrmfj",
+        "@type": "Cycle",
+        "name": "Cattle (beef) - Rondônia, Brazil - 2013",
+        "site": {
+          "@id": "nixxrdw",
+          "@type": "Site",
+          "name": "Pasture - Brazil"
+        },
+        "otherSites": [
+          {
+            "@id": "7aalbii",
+            "@type": "Site",
+            "name": "Animal Housing - Brazil"
+          }
+        ],
+        "endDate": "2013",
+        "cycleDuration": 365,
+        "startDateDefinition": "one year prior",
+        "siteDuration": 300,
+        "siteArea": 33.12,
+        "otherSitesDuration": [
+          65
+        ],
+        "otherSitesArea": [
+          0.28
+        ],
+        "siteUnusedDuration": 65,
+        "otherSitesUnusedDuration": [
+          300
+        ],
+        "defaultMethodClassification": "non-verified survey data",
+        "defaultMethodClassificationDescription": "A telephone survey of 50 farms.",
+        "defaultSource": {
+          "@id": "s6nl6jn",
+          "@type": "Source",
+          "name": "Alvarez et al (2021)"
+        },
+        "functionalUnit": "relative",
+        "completeness": {
+          "@type": "Completeness",
+          "animalPopulation": true,
+          "freshForage": false,
+          "otherChemical": true,
+          "ingredient": true,
+          "operation": false,
+          "electricityFuel": false,
+          "material": false,
+          "transport": false,
+          "fertiliser": true,
+          "soilAmendment": true,
+          "pesticideVeterinaryDrug": true,
+          "water": true,
+          "animalFeed": true,
+          "liveAnimalInput": true,
+          "seed": true,
+          "product": true,
+          "cropResidue": false,
+          "excreta": true,
+          "waste": false
+        },
+        "inputs": [
+          {
+            "@type": "Input",
+            "term": {
+              "@id": "lime",
+              "@type": "Term",
+              "name": "Lime",
+              "units": "kg CaCO3",
+              "termType": "soilAmendment"
+            },
+            "value": [
+              250
+            ]
+          },
+          {
+            "@type": "Input",
+            "term": {
+              "@id": "beefCattleCalfWeaned",
+              "@type": "Term",
+              "name": "Beef cattle, calf (weaned)",
+              "units": "number",
+              "termType": "liveAnimal"
+            },
+            "value": [
+              4
+            ]
+          }
+        ],
+        "animals": [
+          {
+            "@type": "Animal",
+            "animalId": "young beef cattle heifer",
+            "term": {
+              "@id": "beefCattleHeifer",
+              "@type": "Term",
+              "name": "Beef cattle, heifer",
+              "units": "number",
+              "termType": "liveAnimal"
+            },
+            "value": 15,
+            "referencePeriod": "average",
+            "properties": [
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "age",
+                  "@type": "Term",
+                  "name": "Age",
+                  "units": "days",
+                  "termType": "property"
+                },
+                "value": 730
+              },
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "liveweightPerHead",
+                  "@type": "Term",
+                  "name": "Liveweight per head",
+                  "units": "kg liveweight / head",
+                  "termType": "property"
+                },
+                "value": 200
+              }
+            ]
+          },
+          {
+            "@type": "Animal",
+            "animalId": "mature beef cattle heifer",
+            "term": {
+              "@id": "beefCattleHeifer",
+              "@type": "Term",
+              "name": "Beef cattle, heifer",
+              "units": "number",
+              "termType": "liveAnimal"
+            },
+            "value": 10,
+            "referencePeriod": "average",
+            "properties": [
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "age",
+                  "@type": "Term",
+                  "name": "Age",
+                  "units": "days",
+                  "termType": "property"
+                },
+                "value": 1095
+              },
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "liveweightPerHead",
+                  "@type": "Term",
+                  "name": "Liveweight per head",
+                  "units": "kg liveweight / head",
+                  "termType": "property"
+                },
+                "value": 250
+              }
+            ]
+          },
+          {
+            "@type": "Animal",
+            "animalId": "beef cattle cow",
+            "term": {
+              "@id": "beefCattleCow",
+              "@type": "Term",
+              "name": "Beef cattle (cow)",
+              "units": "number",
+              "termType": "liveAnimal"
+            },
+            "value": 20,
+            "referencePeriod": "average",
+            "properties": [
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "liveweightPerHead",
+                  "@type": "Term",
+                  "name": "Liveweight per head",
+                  "units": "kg liveweight / head",
+                  "termType": "property"
+                },
+                "value": 430
+              }
+            ]
+          },
+          {
+            "@type": "Animal",
+            "animalId": "beef cattle bull",
+            "term": {
+              "@id": "beefCattleBull",
+              "@type": "Term",
+              "name": "Beef cattle, bull",
+              "units": "number",
+              "termType": "liveAnimal"
+            },
+            "value": 1,
+            "referencePeriod": "average",
+            "properties": [
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "liveweightPerHead",
+                  "@type": "Term",
+                  "name": "Liveweight per head",
+                  "units": "kg liveweight / head",
+                  "termType": "property"
+                },
+                "value": 500
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "@type": "Product",
+            "term": {
+              "@id": "beefCattle",
+              "@type": "Term",
+              "name": "Beef cattle",
+              "units": "number",
+              "termType": "liveAnimal"
+            },
+            "value": [
+              10
+            ],
+            "properties": [
+              {
+                "@type": "Property",
+                "term": {
+                  "@id": "processingConversionLiveweightToColdDressedCarcassWeight",
+                  "@type": "Term",
+                  "name": "Processing conversion, liveweight to cold dressed carcass weight",
+                  "units": "%",
+                  "termType": "property"
+                },
+                "value": 48
+              }
+            ]
+          },
+          {
+            "@type": "Product",
+            "term": {
+              "@id": "excretaBeefCattleExceptFeedlotFedKgMass",
+              "@type": "Term",
+              "name": "Excreta, beef cattle, except feedlot fed (kg mass)",
+              "units": "kg",
+              "termType": "excreta"
+            },
+            "value": [
+              1050
+            ]
+          }
+        ],
+        "transformations": [
+          {
+            "@type": "Transformation",
+            "transformationId": "excreta-on-pasture",
+            "term": {
+              "@id": "pastureRangePaddockExcretaManagement",
+              "@type": "Term",
+              "name": "Pasture/Range/Paddock (excreta management)",
+              "termType": "excretaManagement"
+            },
+            "inputs": [
+              {
+                "@type": "Input",
+                "term": {
+                  "@id": "excretaBeefCattleExceptFeedlotFedKgMass",
+                  "@type": "Term",
+                  "name": "Excreta, beef cattle, except feedlot fed (kg mass)",
+                  "units": "kg",
+                  "termType": "excreta"
+                },
+                "value": [
+                  840
+                ],
+                "fromCycle": false
+              }
+            ],
+            "transformedShare": 80
+          },
+          {
+            "@type": "Transformation",
+            "transformationId": "pit-storage",
+            "term": {
+              "@id": "pitStorageBelowAnimalConfinements",
+              "@type": "Term",
+              "name": "Pit storage below animal confinements",
+              "termType": "excretaManagement"
+            },
+            "inputs": [
+              {
+                "@type": "Input",
+                "term": {
+                  "@id": "excretaBeefCattleExceptFeedlotFedKgMass",
+                  "@type": "Term",
+                  "name": "Excreta, beef cattle, except feedlot fed (kg mass)",
+                  "units": "kg",
+                  "termType": "excreta"
+                },
+                "value": [
+                  210
+                ],
+                "fromCycle": false
+              }
+            ],
+            "transformedShare": 20
+          },
+          {
+            "@type": "Transformation",
+            "transformationId": "lagoon",
+            "term": {
+              "@id": "liquidSlurry",
+              "@type": "Term",
+              "name": "Liquid/Slurry",
+              "termType": "excretaManagement"
+            },
+            "inputs": [
+              {
+                "@type": "Input",
+                "term": {
+                  "@id": "excretaBeefCattleExceptFeedlotFedKgMass",
+                  "@type": "Term",
+                  "name": "Excreta, beef cattle, except feedlot fed (kg mass)",
+                  "units": "kg",
+                  "termType": "excreta"
+                },
+                "fromCycle": false
+              }
+            ],
+            "transformedShare": 100,
+            "previousTransformationId": "pit-storage"
+          }
+        ],
+        "dataPrivate": false
+      }
+    },
+    {
+      "specVersion": "30.2.1",
+      "dataSchema": "https://www.hestia.earth/schema-data/json-schema/Site.json",
+      "data": {
+        "@id": "nixxrdw",
+        "@type": "Site",
+        "siteType": "permanent pasture",
+        "country": {
+          "@id": "GADM-BRA",
+          "@type": "Term",
+          "name": "Brazil",
+          "termType": "region"
+        },
+        "management": [
+          {
+            "@type": "Management",
+            "term": {
+              "@id": "forest",
+              "@type": "Term",
+              "name": "Forest",
+              "termType": "landCover"
+            },
+            "value": 5.9,
+            "startDate": "1990-01-01",
+            "endDate": "1990-12-31"
+          },
+          {
+            "@type": "Management",
+            "term": {
+              "@id": "annualCropland",
+              "@type": "Term",
+              "name": "Annual cropland",
+              "termType": "landCover"
+            },
+            "value": 0,
+            "startDate": "1990-01-01",
+            "endDate": "1990-12-31"
+          },
+          {
+            "@type": "Management",
+            "term": {
+              "@id": "permanentCropland",
+              "@type": "Term",
+              "name": "Permanent cropland",
+              "termType": "landCover"
+            },
+            "value": 0,
+            "startDate": "1990-01-01",
+            "endDate": "1990-12-31"
+          },
+          {
+            "@type": "Management",
+            "term": {
+              "@id": "permanentPasture",
+              "@type": "Term",
+              "name": "Permanent pasture",
+              "termType": "landCover"
+            },
+            "value": 94.15,
+            "startDate": "1990-01-01",
+            "endDate": "1990-12-31"
+          },
+          {
+            "@type": "Management",
+            "term": {
+              "@id": "permanent pasture",
+              "@type": "Term",
+              "name": "Permanent pasture",
+              "termType": "landCover"
+            },
+            "value": 100,
+            "startDate": "2010-01-01",
+            "endDate": "2010-12-31"
+          }
+        ],
+        "defaultSource": {
+          "@id": "s6nl6jn",
+          "@type": "Source",
+          "name": "Alvarez et al (2021)"
+        },
+        "defaultMethodClassification": "verified survey data",
+        "defaultMethodClassificationDescription": "Data from site visits and historical maps",
+        "dataPrivate": false
+      }
+    }
+  ]
+}

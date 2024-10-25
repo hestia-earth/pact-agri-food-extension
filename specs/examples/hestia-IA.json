@@ -1,0 +1,83 @@
+{
+  "specVersion": "30.2.1",
+  "dataSchema": "https://www.hestia.earth/schema-data/json-schema/ImpactAssessment.json",
+  "data": {
+    "@context": "https://DOMAIN/schema/ImpactAssessment.jsonld",
+    "@id": "bgg4x8-1",
+    "@type": "ImpactAssessment",
+    "cycle": {
+      "@id": "vc664x8",
+      "@type": "Cycle",
+      "name": "50N, Wheat grain, 1989"
+    },
+    "endDate": "1989-12-31",
+    "country": {
+      "@id": "GADM-FRA",
+      "@type": "Term",
+      "name": "France",
+      "termType": "region"
+    },
+    "region": {
+      "@id": "GADM-FRA.6.9.3_1",
+      "@type": "Term",
+      "name": "Forbach (Districts), Moselle (Department), Grand Est (Region), France",
+      "termType": "region"
+    },
+    "product": {
+      "@type": "Product",
+      "term": {
+        "@id": "wheatGrain",
+        "@type": "Term",
+        "name": "Wheat, grain",
+        "termType": "crop"
+      }
+    },
+    "functionalUnitQuantity": 1,
+    "allocationMethod": "economic",
+    "source": {
+      "@id": "s66765d",
+      "@type": "Source",
+      "name": "Gigou (1990)"
+    },
+    "emissionsResourceUse": [
+      {
+        "@type": "Indicator",
+        "term": {
+          "@id": "no3ToGroundwaterSoilFlux",
+          "@type": "Term",
+          "name": "NO3, to groundwater, soil flux",
+          "units": "kg NO3",
+          "termType": "emission"
+        },
+        "value": 0.01709,
+        "methodModel": {
+          "@id": "percolationLysimeter",
+          "@type": "Term",
+          "name": "Percolation lysimeter",
+          "termType": "methodEmissionResourceUse"
+        },
+        "methodTier": "tier 2"
+      }
+    ],
+    "impacts": [
+      {
+        "@type": "Indicator",
+        "term": {
+          "@type": "Term",
+          "@id": "eutrophicationPotentialExcludingFate",
+          "name": "Eutrophication potential, excluding fate",
+          "termType": "characterisedIndicator",
+          "units": "kg PO43- eq"
+        },
+        "methodModel": {
+          "@type": "Term",
+          "@id": "cml2001Baseline",
+          "name": "CML2001 Baseline",
+          "termType": "model"
+        },
+        "value": 0.03214395695116437
+      }
+    ],
+    "dataPrivate": false
+  }
+}
