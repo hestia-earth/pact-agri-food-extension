@@ -1,0 +1,14 @@
+{
+  "specVersion": "1.0.0",
+  "dataSchema": "xxx",
+  "data": {
+    "landManagementBiogenicCH4Emissons": 0.025,
+    "landManagementDirectN2OEmissions": 0.0018,
+    "landManagementFossilCH4Emissions": 0.021,
+    "landManagementIndirectN2OEmissions": 0.0009,
+    "landManagementBiomassCarbonEmissions": 0,
+    "landManagementDeadOrganicCarbonEmissions": 0,
+    "landManagementSoilCarbonEmissions": 0,
+    "nonLandGhgEmissions": 0
+  }
+}
