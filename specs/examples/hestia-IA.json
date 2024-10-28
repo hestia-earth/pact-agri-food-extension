@@ -2,7 +2,7 @@
   "specVersion": "30.2.1",
   "dataSchema": "https://www.hestia.earth/schema-data/json-schema/ImpactAssessment.json",
   "data": {
-    "@context": "https://DOMAIN/schema/ImpactAssessment.jsonld",
+    "@context": "https://www.hestia.earth/schema/ImpactAssessment.jsonld",
     "@id": "bgg4x8-1",
     "@type": "ImpactAssessment",
     "cycle": {
