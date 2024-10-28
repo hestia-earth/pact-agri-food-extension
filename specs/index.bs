@@ -118,8 +118,6 @@ An [=AgriFood=] example record.
 <pre class=include-code>
 path: examples/agrifood.json
 highlight: json
-line-numbers:
-line-highlight:
 </pre>
 
 </div>
@@ -146,8 +144,6 @@ A [=HESTIA=] example record with additional environmental impact indicators.
 <pre class=include-code>
 path: examples/hestia-IA.json
 highlight: json
-line-numbers:
-line-highlight:
 </pre>
 
 A [=HESTIA=] example record with activity data.
@@ -155,8 +151,6 @@ A [=HESTIA=] example record with activity data.
 <pre class=include-code>
 path: examples/hestia-cycle-site.json
 highlight: json
-line-numbers:
-line-highlight:
 </pre>
 
 </div>
