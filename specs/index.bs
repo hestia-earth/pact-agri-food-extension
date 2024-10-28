@@ -44,13 +44,16 @@ Local Boilerplate: header yes
 
 The core PACT data model is defined <a href="https://wbcsd.github.io/data-exchange-protocol/v2/">here</a>. Guidelines for implementing the PACT data model are <a href="https://wbcsd.github.io/introduction/">here</a>.  We do not repeat the data model or guidelines here, and users should consult these links for information.
 
+
 # Agri-food data model extension # {#data-model-extension}
 
 ## Overview
 
 This data model extension follows the <a href="https://wbcsd.github.io/data-model-extensions/spec/">specification</a> and <a href="https://wbcsd.github.io/data-model-extensions/guidance/">guidance</a> defined by PACT for data model extensions.
 
-The additional mandatory fields in the extension have been selected for compliance with the <a href="https://ghgprotocol.org/land-sector-and-removals-guidance">Greenhouse Gas Protocol Land Sector and Removals Guidance (LSRG)</a>. In turn, this supports compliance with the <a href="https://sciencebasedtargets.org/sectors/forest-land-and-agriculture">Science Based Targets Initiative (SBTi) Forest, Land and Agriculture Guidance (FLAG)</a>.
+The additional mandatory properties in the extension have been selected for compliance with the <a href="https://ghgprotocol.org/land-sector-and-removals-guidance">Greenhouse Gas Protocol Land Sector and Removals Guidance (LSRG)</a>. In turn, this supports compliance with the <a href="https://sciencebasedtargets.org/sectors/forest-land-and-agriculture">Science Based Targets Initiative (SBTi) Forest, Land and Agriculture Guidance (FLAG)</a>.
+
+## Properties
 
 <figure id="agri-food-properties-table" dfn-type="element-attr" dfn-for="DataModelExtension">
   <table class="data">
@@ -108,11 +111,9 @@ The additional mandatory fields in the extension have been selected for complian
 
 ## Example
 
-## Example
-
 <div class="example">
 
-A [=AgriFood=] example record with 2 imaginary extensions.
+An [=AgriFood=] example record.
 
 <pre class=include-code>
 path: examples/agrifood.json
@@ -123,7 +124,9 @@ line-highlight:
 
 </div>
 
-# Agri-food activity data model # {#activity-data-model}
+# HESTIA data model # {#hestia-data-model}
+
+## Overview
 
 HESTIA already makes available a comprehensive data model, enabling the complete and consistent representation of virtually all agri-food production practices and environmental impacts. Data in this format can be shared directly via PACT through this data model extension.
 
@@ -133,6 +136,30 @@ The HESTIA data model requires the usage of an ontology which is described in th
 
 Organisations (especially those operating at the farm level) would be encouraged to share data to this level of granularity, adhering to the HESTIA model, and sharing the data via the PACT data exchange protocol.
 
+
+## Example
+
+<div class="example">
+
+A [=HESTIA=] example record with additional environmental impact indicators.
+
+<pre class=include-code>
+path: examples/hestia-IA.json
+highlight: json
+line-numbers:
+line-highlight:
+</pre>
+
+A [=HESTIA=] example record with activity data.
+
+<pre class=include-code>
+path: examples/hestia-cycle-site.json
+highlight: json
+line-numbers:
+line-highlight:
+</pre>
+
+</div>
 
 
 ## Data Types ## {#dt-utility-section}
@@ -181,3 +208,12 @@ status tags are:
 
 :: Stable release. No further changes will be made to this version. Any additional changes will be
     included in subsequent versions. Every Release is assigned a stable, permanent, URL.
+
+
+# Definitions # {#definitions}
+
+: <dfn>AgriFood</dfn>
+:: A data model extension, containing additional fields relevant to carbon footprint reporting in the agri-food sector.
+
+: <dfn>HESTIA</dfn>
+:: A data model extension, for adding activity data and multiple environmental impact indicators, as defined in the <a href="https://hestia.earth/schema">HESTIA schema</a>.
