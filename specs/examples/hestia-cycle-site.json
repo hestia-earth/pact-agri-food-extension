@@ -4,17 +4,17 @@
       "specVersion": "30.2.1",
       "dataSchema": "https://www.hestia.earth/schema-data/json-schema/Cycle.json",
       "data": {
-        "@id": "vtfrmfj",
+        "@id": "sample-cycle",
         "@type": "Cycle",
         "name": "Cattle (beef) - Rondônia, Brazil - 2013",
         "site": {
-          "@id": "nixxrdw",
+          "@id": "sample-site-1",
           "@type": "Site",
           "name": "Pasture - Brazil"
         },
         "otherSites": [
           {
-            "@id": "7aalbii",
+            "@id": "sample-site-2",
             "@type": "Site",
             "name": "Animal Housing - Brazil"
           }
@@ -37,7 +37,7 @@
         "defaultMethodClassification": "non-verified survey data",
         "defaultMethodClassificationDescription": "A telephone survey of 50 farms.",
         "defaultSource": {
-          "@id": "s6nl6jn",
+          "@id": "sample-source",
           "@type": "Source",
           "name": "Alvarez et al (2021)"
         },
@@ -349,7 +349,7 @@
       "specVersion": "30.2.1",
       "dataSchema": "https://www.hestia.earth/schema-data/json-schema/Site.json",
       "data": {
-        "@id": "nixxrdw",
+        "@id": "sample-site-1",
         "@type": "Site",
         "siteType": "permanent pasture",
         "country": {
@@ -421,7 +421,7 @@
           }
         ],
         "defaultSource": {
-          "@id": "s6nl6jn",
+          "@id": "sample-source",
           "@type": "Source",
           "name": "Alvarez et al (2021)"
         },

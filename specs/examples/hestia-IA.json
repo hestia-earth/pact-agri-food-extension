@@ -3,7 +3,7 @@
   "dataSchema": "https://www.hestia.earth/schema-data/json-schema/ImpactAssessment.json",
   "data": {
     "@context": "https://www.hestia.earth/schema/ImpactAssessment.jsonld",
-    "@id": "bgg4x8-1",
+    "@id": "sample-IA-1",
     "@type": "ImpactAssessment",
     "cycle": {
       "@id": "vc664x8",

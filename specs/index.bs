@@ -76,32 +76,32 @@ The additional mandatory properties in the extension have been selected for comp
         <td>M
         <td>Direct emissions of nitrous oxide (N2O) from land management activities such as the application of nitrogen-based fertilizers. A subclass of <a href="https://wbcsd.github.io/data-exchange-protocol/v2/#element-attrdef-carbonfootprint-landmanagementghgemissions"><code>landManagementGhgEmissions</code></a>.
       <tr>
-        <td><dfn>landManagementFossilCH4Emissions</dfn>
+        <td><dfn>landManagementFossilCH4Emissions</dfn> : [=Decimal=]
         <td>String
         <td>M
         <td>Emissions of fossil methane (CH4) from land management, often resulting from the use of fossil fuels or other non-renewable sources. A subclass of <a href="https://wbcsd.github.io/data-exchange-protocol/v2/#element-attrdef-carbonfootprint-landmanagementghgemissions"><code>landManagementGhgEmissions</code></a>.
       <tr>
-        <td><dfn>landManagementIndirectN2OEmissions</dfn>
+        <td><dfn>landManagementIndirectN2OEmissions</dfn> : [=Decimal=]
         <td>String
         <td>M
         <td>Indirect nitrous oxide (N2O) emissions that occur due to the volatilization or leaching of nitrogen from fertilizers or organic matter in land management. A subclass of <a href="https://wbcsd.github.io/data-exchange-protocol/v2/#element-attrdef-carbonfootprint-landmanagementghgemissions"><code>landManagementGhgEmissions</code></a>.
       <tr>
-        <td><dfn>landManagementBiomassCarbonEmissions</dfn>
+        <td><dfn>landManagementBiomassCarbonEmissions</dfn> : [=Decimal=]
         <td>String
         <td>M
         <td>Changes in the carbon stored in living biomass (e.g., trees, crops) due to land management practices. A subclass of <a href="https://wbcsd.github.io/data-exchange-protocol/v2/#element-attrdef-carbonfootprint-landmanagementghgemissions"><code>landManagementGhgEmissions</code></a>.
       <tr>
-        <td><dfn>landManagementDeadOrganicCarbonEmissions</dfn>
+        <td><dfn>landManagementDeadOrganicCarbonEmissions</dfn> : [=Decimal=]
         <td>String
         <td>M
         <td>Changes in the carbon stored in dead organic matter (e.g., fallen leaves, branches, decomposing plant material) due to land management. A subclass of <a href="https://wbcsd.github.io/data-exchange-protocol/v2/#element-attrdef-carbonfootprint-landmanagementghgemissions"><code>landManagementGhgEmissions</code></a>.
       <tr>
-        <td><dfn>landManagementSoilCarbonEmissions</dfn>
+        <td><dfn>landManagementSoilCarbonEmissions</dfn> : [=Decimal=]
         <td>String
         <td>M
         <td>Changes in the carbon stored in soil due to land management activities, including farming and forestry practices. A subclass of <a href="https://wbcsd.github.io/data-exchange-protocol/v2/#element-attrdef-carbonfootprint-landmanagementghgemissions"><code>landManagementGhgEmissions</code></a>.
       <tr>
-        <td><dfn>nonLandGhgEmissions</dfn>
+        <td><dfn>nonLandGhgEmissions</dfn> : [=Decimal=]
         <td>String
         <td>M
         <td>Greenhouse gas emissions from non-land-based activities, such as energy use, industrial processes, or transportation related to the product lifecycle.
@@ -157,7 +157,7 @@ highlight: json
 </div>
 
 
-## Data Types ##
+## Data Types
 
 ### Data Type <dfn>Decimal</dfn> ### {#dt-decimal}
 
