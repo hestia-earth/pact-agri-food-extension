@@ -7,6 +7,7 @@ ED: https://hestia-earth.github.io/pact-agri-food-extension/
 Canonical URL: ED
 Editor: Joseph Poore, https://hestia.earth, joseph.poore@biology.ox.ac.uk
 Editor: Caroline Wood, https://altruistiq.com, caroline@altruistiq.com
+Editor: Guillaume Royer, https://hestia.earth, guillaume@hestia.earth
 Repository: hestia-earth/pact-agri-food-extension
 Abstract: This document outlines the semantics for agri-food data exchange. Its is an extension of the PACT Technical Specifications and supports the integration of agri-food data exchange into the PACT Network. Implementing this specification enables stakeholders within agri-food supply chains to exchange activity and product footprint data.
 Markup Shorthands: markdown yes
@@ -156,7 +157,7 @@ highlight: json
 </div>
 
 
-## Data Types ## {#dt-utility-section}
+## Data Types ##
 
 ### Data Type <dfn>Decimal</dfn> ### {#dt-decimal}
 
